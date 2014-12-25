@@ -15,6 +15,7 @@ Location data is written into the 'geolocation' column in a POINT(lon, lat) form
 
 In this example I have an activerecord model 'DB_City_geolocation' representing the 'cities_geolocation' table.
 
+It should be fairly easy to port this in different languages.
 
 Related links:
 
