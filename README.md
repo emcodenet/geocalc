@@ -9,13 +9,13 @@ get_closest() method:
 
 The following assumptions are made:
 
-You have a MySQL database with a 'cities_geolocation' table and columns: id, repo_id, repo_name, geolocation.
+You have a MySQL database with a 'geolocation_table' table and columns: id, name, geolocation.
 
 Table is a MyISAM engine, and the 'geolocation' column is of a POINT data type and has a SPATIAL index.
 
 Location data is written into the 'geolocation' column in a POINT(lon, lat) format.
 
-In this example I have an activerecord model 'DB_City_geolocation' representing the 'cities_geolocation' table.
+In this example I have an activerecord model 'DB_City_geolocation' representing the 'geolocation_table' table.
 
 get_distance() method:
 
