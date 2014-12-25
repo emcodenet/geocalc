@@ -13,7 +13,7 @@ class Geocalc {
 
     /**
      * 
-     * @param array $coords (lon and lat elements as floats Default: array('lon' => '25.3892', 'lat' => '35.3172'))
+     * @param array $coords (lon and lat elements as floats Default: array('lon' => 25.3892, 'lat' => 35.3172))
      * @param int $distance_radius (distance in km or m, see $units. Default: 100)
      * @param string $units (m || km Default: km)
      * @param int $limit (num of results Default: 10)
