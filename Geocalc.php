@@ -49,15 +49,19 @@ class Geocalc {
 
         $earth_radius = ($units == 'km') ? 6371 : (($units == 'm') ? 6371000 : 6371); // km 6371, m 6371000
         
-        $haversine_query = "Select repo_id, repo_name, X(geolocation) as lon, Y(geolocation) as lat,
+        $geolocation_data_table = 'geolocation_table';
+        $point_data_column = 'geolocation';
+        $select_other_columns = 'id, name';
+        
+        $haversine_query = "Select $select_other_columns, X($point_data_column) as lon, Y($point_data_column) as lat,
                 ROUND(($earth_radius * 
                         acos( 
                           cos( radians($lat) )
-                        * cos( radians( Y(geolocation) ) ) 
-                        * cos( radians( X(geolocation) ) - radians($lon))
+                        * cos( radians( Y($point_data_column) ) ) 
+                        * cos( radians( X($point_data_column) ) - radians($lon))
                         + sin( radians($lat) ) 
-                        * sin( radians( Y(geolocation) ) ) ) ) ) AS distance 
-                FROM cities_geolocation 
+                        * sin( radians( Y($point_data_column) ) ) ) ) ) AS distance 
+                FROM $geolocation_data_table
                 HAVING distance < $distance_radius               
                 ORDER BY distance ASC 
                 LIMIT 0 , $limit;";
