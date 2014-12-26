@@ -64,7 +64,7 @@ class Geocalc {
                 FROM $geolocation_data_table
                 HAVING distance < $distance_radius               
                 ORDER BY distance ASC 
-                LIMIT 0 , $limit;";
+                LIMIT 0 , $limit";
         
         $results = DB_City_geolocation::query($haversine_query);
 
