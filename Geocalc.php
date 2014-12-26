@@ -53,7 +53,7 @@ class Geocalc {
         $point_data_column = 'geolocation';
         $select_other_columns = 'id, name';
         
-        $haversine_query = "Select $select_other_columns, X($point_data_column) as lon, Y($point_data_column) as lat,
+        $haversine_query = "SELECT $select_other_columns, X($point_data_column) as lon, Y($point_data_column) as lat,
                 ROUND(($earth_radius * 
                         acos( 
                           cos( radians($lat) )
