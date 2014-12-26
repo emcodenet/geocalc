@@ -23,7 +23,7 @@ No dependencies, just pass sets of coordinates to calculate distance between pla
 
 
 
-It should be fairly easy to port this in different languages.
+It should be fairly easy to port this to different languages.
 
 Related links:
 
