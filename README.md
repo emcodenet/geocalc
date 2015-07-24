@@ -51,7 +51,19 @@ Run "php artisan vendor:publish".
 
 You can now use the class:
 
-    Geocalc::getDistance($from, $to, $units);
+    $g = Geocalc::getDistance(
+                [
+                    'lon' => 25.3892,
+                    'lat' => 35.3172
+                ],
+                [
+                    'lon' => 28.3892,
+                    'lat' => 37.3172
+                ],
+                'km'
+            );
+    
+    dd($g);
 
 
 It should be fairly easy to port this to different languages.
