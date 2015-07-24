@@ -18,7 +18,7 @@ class Geocalc extends Controller
      * @param string $units (m || km Default: km)
      * @return int
      */
-    public static function getDistance($from = array(), $to = array(), $units = 'km')
+    public static function getDistance($from = [], $to = [], $units = 'km')
     {
 
         if(!self::checkParams($from, $to, $units)){
