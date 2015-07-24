@@ -28,7 +28,7 @@ class Geocalc extends Controller
 
         $earth_radius = ($units == 'km') ? 6371 : (($units == 'm') ? 6371000 : 6371); // km 6371, m 6371000
 
-        self::calculate($from, $to, $earth_radius);
+        return self::calculate($from, $to, $earth_radius);
 
     }
 
@@ -71,6 +71,7 @@ class Geocalc extends Controller
         $a = sin($dLat / 2) * sin($dLat / 2) + cos(deg2rad($from['lat'])) * cos(deg2rad($to['lat'])) * sin($dLon / 2) * sin($dLon / 2);
         $c = 2 * asin(sqrt($a));
         $d = $earth_radius * $c;
+
 
         return ceil($d);
     }
