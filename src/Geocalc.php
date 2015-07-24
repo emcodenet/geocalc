@@ -2,12 +2,14 @@
 
 namespace Emcodenet\Geocalc;
 
+use App\Http\Controllers\Controller;
+
 /**
  * Geolocation calculations
  *
  * @author Ivan Ciric
  */
-class Geocalc
+class Geocalc extends Controller
 {
     /**
      *
