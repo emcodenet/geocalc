@@ -64,7 +64,6 @@ You can now use the class:
     dd($g);
 
 
-It should be fairly easy to port this to different languages.
 
 Related links:
 
