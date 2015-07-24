@@ -18,21 +18,21 @@ class Geocalc extends Controller
      * @param string $units (m || km Default: km)
      * @return int
      */
-    public function getDistance($from = array(), $to = array(), $units = 'km')
+    public static function getDistance($from = array(), $to = array(), $units = 'km')
     {
 
-        if(!$this->checkParams($from, $to, $units)){
+        if(!self::checkParams($from, $to, $units)){
 
             return false;
         };
 
         $earth_radius = ($units == 'km') ? 6371 : (($units == 'm') ? 6371000 : 6371); // km 6371, m 6371000
 
-        $this->calculate($from, $to, $earth_radius);
+        self::calculate($from, $to, $earth_radius);
 
     }
 
-    private function checkParams($from, $to, $units)
+    private static function checkParams($from, $to, $units)
     {
 
 
@@ -62,7 +62,7 @@ class Geocalc extends Controller
 
     }
 
-    private function calculate($from, $to, $earth_radius)
+    private static function calculate($from, $to, $earth_radius)
     {
 
         $dLat = deg2rad($to['lat'] - $from['lat']);
