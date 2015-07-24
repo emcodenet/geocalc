@@ -1,0 +1,13 @@
+{
+    "name": "emcodenet/geocalc",
+    "description": "Laravel 5 package for geolocation distance calculations",
+    "type": "Laravel Package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Ciric",
+            "email": "ivan.it.office@gmail.com"
+        }
+    ],
+    "require": {}
+}
