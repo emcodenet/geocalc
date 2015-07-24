@@ -10,9 +10,9 @@ namespace Emcodenet\Geocalc;
 
 
 use Exception;
-use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
+use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
-class ServiceProvider extends IlluminateServiceProvider {
+class ServiceProvider extends LaravelServiceProvider {
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -41,7 +41,7 @@ class ServiceProvider extends IlluminateServiceProvider {
      */
     public function provides()
     {
-        return array('sabre-laravel-bridge');
+        return array('geocalc');
     }
     /**
      * Define a value, if not already defined
