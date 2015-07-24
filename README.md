@@ -20,12 +20,38 @@ Installation:
      ],
 
 
-Then add 
+Add 
 
     "emcodenet/geocalc": "dev-larapack" 
     
 to the "require" array.
 
+Run "composer update".
+
+Add
+
+    "Emcodenet\\Geocalc\\": "vendor/emcodenet/geocalc/src"
+
+to the "autoload" -> "psr-4" array.
+
+Add
+ 
+    Emcodenet\Geocalc\ServiceProvider::class,
+    
+to the 'providers' array in config/app.php.
+
+Add
+ 
+    'Geocalc' => Emcodenet\Geocalc\GeocalcFacade::class,
+    
+to the 'aliases' array in config/app.php.
+
+Run "composer update".
+Run "php artisan vendor:publish".
+
+You can now use the class:
+
+    Geocalc::getDistance($from, $to, $units);
 
 
 It should be fairly easy to port this to different languages.
