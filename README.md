@@ -1,7 +1,5 @@
-geocalc
+Laravel 5 Geocalc
 =======
-
-Geolocation calculations
 
 Calculate distance between two points on a globe.
 
