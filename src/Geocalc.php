@@ -3,7 +3,6 @@
 namespace Emcodenet\Geocalc;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Exception;
 
 /**
  * Geolocation calculations
@@ -22,7 +21,10 @@ class Geocalc extends Controller
     public function getDistance($from = array(), $to = array(), $units = 'km')
     {
 
-        $this->checkParams($from, $to, $units);
+        if(!$this->checkParams($from, $to, $units)){
+
+            return false;
+        };
 
         $earth_radius = ($units == 'km') ? 6371 : (($units == 'm') ? 6371000 : 6371); // km 6371, m 6371000
 
@@ -32,9 +34,10 @@ class Geocalc extends Controller
 
     private function checkParams($from, $to, $units)
     {
-        if ($units != 'km' && $units != 'm') {
 
-            throw new Exception('<b>Geocalc Exception:</b> Invalid distance units supplied: ' . htmlentities($units) . ' (km or m expected)');
+
+        if ($units != 'km' && $units != 'm') {
+            return false;
         }
 
         if (is_array($from)
@@ -53,7 +56,7 @@ class Geocalc extends Controller
 
         } else {
 
-            throw new Exception('<b>Geocalc Exception:</b> Invalid coordinates supplied');
+            return false;
         }
 
 
