@@ -3,6 +3,7 @@
 namespace Emcodenet\Geocalc;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Exception;
 
 /**
  * Geolocation calculations
